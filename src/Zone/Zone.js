@@ -12,11 +12,10 @@ class Zone extends Component {
     
     return (
       <div className="zone">
-        {zones.map((z) => {
+        {zones.map((zone, index) => {
           return (
-          <div className="zone-content" style={zoneContentWidth}>
-            <h2>{z.zone}</h2>
-            <House houses={z.houses}/>
+          <div key={index} className="zone-content" style={zoneContentWidth}>
+            <House houses={zone.houses}/>
           </div>          
           )
         })}

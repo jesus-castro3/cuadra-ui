@@ -7,10 +7,10 @@ class House extends Component {
     const { houses } = this.props;
     return (
       <div className="houses">
-        {houses.map((h) => {
+        {houses.map((houseNumber) => {
           return (
-          <div className="house">
-            <p>{h.number}</p>
+          <div key={houseNumber} className="house">
+            <p>{houseNumber}</p>
           </div>
           )       
         })}

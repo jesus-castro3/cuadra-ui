@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Zone from '../Zone/Zone';
-import { PER_ROW, ZONES } from '../constants';
+import { PER_ROW } from '../constants';
+
+
 // import UserCard from '../UserCard/UserCard';
 import '../Cuadra/Cuadra.css';
 
@@ -12,11 +14,15 @@ class Cuadra extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        zones: ZONES
-      });
-    })
+    fetch('http://localhost:3001/layout')
+      .then((res) => {
+        return res.json();
+      })
+      .then((zones) => {
+        this.setState({
+          zones
+        });
+      })
   }
 
   render() {
