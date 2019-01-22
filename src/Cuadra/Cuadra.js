@@ -23,6 +23,8 @@ class Cuadra extends Component {
           zones
         });
       })
+    fetch('http://localhost:3001/users')
+      .then()
   }
 
   render() {
