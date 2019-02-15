@@ -6,17 +6,22 @@ import '../Zone/Zone.css';
 class Zone extends Component {
   render() {
     
-    const { zones, itemsPerRow } = this.props;
-    const percentPerItem = 100/itemsPerRow;
-    const zoneContentWidth = {width: `${percentPerItem}%`}
-    
+    const { zones, users, showUserCard } = this.props;
+    const _usersByKey = users.reduce((accum, user) => {
+      accum[user.house] = user;
+      return accum;
+    },{})
+    const _zones = (users.length) ? zones.map( z => {
+      return z.houses.map( house => {
+        return _usersByKey[house] || { house, empty: true }
+      })
+    }) : [];
     return (
       <div className="zone">
-        {zones.map((z) => {
+        {_zones.map((zone, index) => {
           return (
-          <div className="zone-content" style={zoneContentWidth}>
-            <h2>{z.zone}</h2>
-            <House houses={z.houses}/>
+          <div key={index} className="zone-content" >
+            <House showUserCard={showUserCard} houses={zone}/>
           </div>          
           )
         })}

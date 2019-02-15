@@ -1,3 +1,5 @@
 .cuadra {
-  width: 100vw;  
+  position: relative;
+  width: 100vw;
+  background: #F7F4F3; 
 }
