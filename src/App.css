@@ -1,5 +1,17 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+w
+:root {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body .cuadra {
+  font-family: 'Cabin', sans-serif;
 }
 
 .App-logo {

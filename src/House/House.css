@@ -7,14 +7,18 @@
   font-size: 0.9em;
 }
 .house {
-  width: 50%;
+width: 50%;
   min-width: 100px;
-  min-height: 10px;
-  background: #aaffb1;
-  border: 1px solid black;
+  min-height: 44px;
+  background: #5BC0EB;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 4px;
+  box-shadow: 0px 0px 6px #a9a9a9;
+  color: #333;
+  letter-spacing: 0.09em;
+  font-size: 1.1em;
 }
 
 .house:hover {
@@ -23,11 +27,15 @@
 }
 
 .house p {
-  margin: 0;
-  padding: 0;
   font-weight: bold;
 }
 
 .house--empty {
-  background-color: #ff8d79;
+  background-color: #e87287;
+  color: white;
+}
+
+.house--empty:hover {
+  background-color: #e87287;
+  cursor: not-allowed;
 }

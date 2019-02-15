@@ -6,9 +6,7 @@ import '../Zone/Zone.css';
 class Zone extends Component {
   render() {
     
-    const { zones, users, itemsPerRow, showUserCard } = this.props;
-    const percentPerItem = 100/itemsPerRow;
-    const zoneContentWidth = {width: `${percentPerItem}%`}
+    const { zones, users, showUserCard } = this.props;
     const _usersByKey = users.reduce((accum, user) => {
       accum[user.house] = user;
       return accum;
@@ -22,7 +20,7 @@ class Zone extends Component {
       <div className="zone">
         {_zones.map((zone, index) => {
           return (
-          <div key={index} className="zone-content" style={zoneContentWidth}>
+          <div key={index} className="zone-content" >
             <House showUserCard={showUserCard} houses={zone}/>
           </div>          
           )

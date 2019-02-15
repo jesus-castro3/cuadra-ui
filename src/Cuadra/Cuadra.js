@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Zone from '../Zone/Zone';
-import UserCard from '../UserCard/UserCard'
+import UserCard from '../UserCard/UserCard';
+import NavBar from '../NavBar/NavBar';
 import { PER_ROW } from '../constants';
 
 import '../Cuadra/Cuadra.css';
+
+
 
 class Cuadra extends Component {
   
@@ -54,6 +57,7 @@ class Cuadra extends Component {
     <div className="cuadra">
       <Zone zones={this.state.zones} users={this.state.users} itemsPerRow={PER_ROW} showUserCard={this.showUserCard}/>
       <UserCard card={this.state.userCard} hideUserCard={this.hideUserCard}/>
+      <NavBar/>
     </div>
     )
   }
